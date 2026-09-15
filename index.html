@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'rel='stylesheet'> 
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <main class="container">
@@ -13,14 +15,26 @@
                 <h1>Log In</h1>
             </div>
             <div class="box-user">
+                <i class="bx bxs-user"></i>
                 <input type="text" placeholder="User">
             </div>
             <div class="box-password">
+                <i class="bx bxs-lock"></i>
                 <input type="password" placeholder="Password">
             </div>
-            <button class="button-login">Log in</button>
+            <div class="button-login">
+                <button>Log in</button>
+            </div>
             <div class="recover-password">
                 <label>Forgot password?</label>
+            </div>
+            <div class="buttons-methods">
+                <div class="button-google">
+                    <button>Google</button>
+                </div>
+                <div class="button-facebook">
+                    <button>Facebook</button>
+                </div>
             </div>
         </div>
     </main>

@@ -21,60 +21,90 @@ body {
 }
 
 .title {
-    width: 350px;
-    height: 60px;
+    width: 249px;
+    height: 128px;
     margin: 10px;
-    font-size: 18px;
+    font-size: 30px;
+    color: #171725;
 }
 
 .box-user, .box-password {
-    width: 350px;
-    height: 40px;
+    position: relative;
+    width: 403px;
+    height: 45px;
     margin: 10px;
 }
 
 .box-user input, .box-password input {
     width: 100%;
     height: 100%;
-    border: 1px solid #707070;
+    border: 1px solid #E0E2E9;
     border-radius: 8px;
     background-color: transparent;
     font-size: 16px;
-    padding-left: 50px;
+    padding-left: 55px;
 }
 
-.box-user input::placeholder {
-    color: #707070;
+.box-user input::placeholder , .box-password input::placeholder{
+    color: #969AB8;
 }
 
-.container-login button {
-    width: 350px;
-    height: 40px;
+
+.box-user i, .box-password i {
+    position: absolute;
+    font-size: 22px;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #969AB8;
+}
+
+.button-login button {
+    width: 403px;
+    height: 47px;
     margin: 10px;
     border: none;
     border-radius: 8px;
-    background-color: blue;
+    background-color: #0062FF;
     cursor: pointer;
     color: white;
     font-weight: 600;
 }
 
-.container-login button:hover {
+.button-login button:hover {
     opacity: 0.8;
 }
 
 .recover-password {
-    width: 350px;
-    height: 20px;
+    width: 403px;
+    height: 24px;
     margin: 10px;
     text-align: right;
     cursor: pointer;
 }
 
 .recover-password label {
-    color: black;
+    color: #0062FF;
+    font-weight: 600;
 }
 
 .recover-password label:hover {
     opacity: 0.6;
+}
+
+.buttons-methods {
+    width: 401px;
+    display: flex;
+    margin: 10px;
+    gap: 22px;
+}
+
+.button-google button, .button-facebook button {
+    width: 190px;
+    height: 43px;
+    border: 1px solid #E0E2E9;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 14px;
+    font-weight: 600;
 }
