@@ -86,6 +86,7 @@ body {
 .recover-password label {
     color: #0062FF;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .recover-password label:hover {
@@ -93,10 +94,14 @@ body {
 }
 
 .buttons-methods {
-    width: 401px;
     display: flex;
+    width: 401px;
     margin: 10px;
     gap: 22px;
+}
+
+.button-google, .button-facebook {
+    position: relative;
 }
 
 .button-google button, .button-facebook button {
@@ -107,4 +112,49 @@ body {
     background-color: transparent;
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
+    padding-left: 15px;
+}
+
+.button-google button:hover, .button-facebook button:hover {
+    opacity: 0.6;
+    border: 1px solid #171725;
+}
+
+
+.button-google img{
+    width: 27px;
+    height: 27px;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button-facebook img {
+    width: 29px;
+    height: 29px;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sign-up {
+    margin: 20px 10px;
+}
+
+.sign-up label {
+    font-size: 15px;
+    color: #969AB8;
+}
+
+.sign-up a {
+    cursor: pointer;
+    text-decoration: none;
+    color: #0062FF;
+}
+
+.sign-up a:hover {
+    opacity: 0.6;
 }
