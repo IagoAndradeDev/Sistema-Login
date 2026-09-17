@@ -67,6 +67,52 @@ app.post("/accounts", (req, res) => {
   }
 });
 
+
+app.post("/login", (req, res) => {
+    const { user, password } = req.body;
+
+    if (!user || !password) {
+        return res.status(400).json({
+            erro: "Insira seu usuario e senha!"
+        });
+    }
+
+    try {
+        const usuario = db
+            .prepare("SELECT * FROM accounts WHERE user = ?")
+            .get(user);
+
+        if (!usuario) {
+            return res.status(401).json({
+                erro: "Esse usuario não existe!"
+            });
+        }
+
+        if (usuario.password !== password) {
+            return res.status(401).json({
+                erro: "Senha incorreta!"
+            });
+        }
+
+        res.status(200).json({
+            mensagem: "Login realizado com sucesso!",
+            usuario: {
+                id: usuario.id,
+                nome: usuario.user,
+                email: usuario.email
+            }
+        });
+
+    } catch (error) {
+        console.error(error);
+
+        res.status(500).json({
+            erro: "Erro interno do servidor."
+        });
+    }
+});
+
+
 app.listen(3000, "0.0.0.0", () => {
   console.log("Servidor rodando em http://localhost:3000");
 });
