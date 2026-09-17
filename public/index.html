@@ -16,31 +16,17 @@
             </div>
             <div class="box-user">
                 <i class="bx bxs-user"></i>
-                <input type="text" placeholder="User">
+                <input type="text" placeholder="User" oninput="this.value = this.value.replace(/[^a-zA-Z0-9._-]/g, '')">
             </div>
             <div class="box-password">
                 <i class="bx bxs-lock"></i>
-                <input type="password" placeholder="Password">
+                <input type="password" placeholder="Password" oninput="this.value = this.value.replace(/\s/g, '')">
             </div>
             <div class="button-login">
                 <button>Log in</button>
             </div>
             <div class="recover-password">
                 <label>Forgot password?</label>
-            </div>
-            <div class="buttons-methods">
-                <div class="button-google">
-                    <img src="/img/google.png" alt="">
-                    <button>Google</button>
-                </div>
-                <div class="button-facebook">
-                    <img src="/img/facebook.png" alt="">
-                    <button>Facebook</button>
-                </div>
-            </div>
-            <div class="sign-up">
-                <label>Don’t have an account?</label>
-                <a href="">Sign up</a>
             </div>
         </div>
         <div class="container-sign-up">
@@ -49,28 +35,18 @@
             </div>
             <div class="box-sign-user">
                 <i class="bx bxs-user"></i>
-                <input type="text" placeholder="User">
+                <input type="text" placeholder="User" oninput="this.value = this.value.replace(/[^a-zA-Z0-9._-]/g, '')">
+            </div>
+            <div class="box-sign-email">
+                <i class="bx bx-envelope"></i>
+                <input type="email" placeholder="Email" oninput="this.value = this.value.replace(/\s/g, '')">
             </div>
             <div class="box-sign-password">
                 <i class="bx bxs-lock"></i>
-                <input type="password" placeholder="Password">
-            </div>
-            <div class="box-sign-repeat">
-                <i class="bx bxs-lock"></i>
-                <input type="password" placeholder="Repeat Password">
+                <input type="password" placeholder="Password" oninput="this.value = this.value.replace(/\s/g, '')">
             </div>
             <div class="button-sign-up">
-                <button>Sign Up</button>
-            </div>
-            <div class="buttons-sign-methods">
-                <div class="button-sign-google">
-                    <img src="img/google.png" alt="">
-                    <button>Google</button>
-                </div>
-                <div class="button-sign-facebook">
-                    <img src="/img/facebook.png" alt="">
-                    <button>Facebook</button>
-                </div>
+                <button onclick="criarConta()">Sign Up</button>
             </div>
             <div class="log-in">
                 <label>Already have an account?</label>

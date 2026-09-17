@@ -27,21 +27,43 @@ app.get("/accounts", (req, res) => {
 });
 
 app.post("/accounts", (req, res) => {
-  const { nome, email } = req.body;
+  const { nome, password, email } = req.body;
 
   try {
+    const existe = db
+      .prepare("SELECT * FROM accounts WHERE user = ? OR email = ?")
+      .get(nome, email);
+
+    if (existe) {
+      if (existe.user === nome) {
+        return res.status(409).json({
+          erro: "Esse usuario já existe!"
+        });
+      }
+
+      if (existe.email === email) {
+        return res.status(409).json({
+          erro: "Esse email já está sendo usado!"
+        });
+      }
+    }
+
     const result = db
-      .prepare("INSERT INTO accounts (user, password, email) VALUES (?, ?, ?)")
-      .run(nome, email);
+      .prepare(
+        "INSERT INTO accounts (user, password, email) VALUES (?, ?, ?)"
+      )
+      .run(nome, password, email);
 
     res.status(201).json({
       id: result.lastInsertRowid,
       nome,
-      password,
       email
     });
+
   } catch (error) {
-    res.status(400).json({ erro: error.message });
+    res.status(400).json({
+      erro: error.message
+    });
   }
 });
 
